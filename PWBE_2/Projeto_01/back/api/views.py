@@ -3,6 +3,7 @@ from .models import Professor
 from .serializer import ProfessorSerializer
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
@@ -23,6 +24,7 @@ def listar_professores(request):
 class ProfessoresView(ListCreateAPIView):
     queryset = Professor.objects.all()
     serializer_class = ProfessorSerializer
+    permission_classes = [IsAuthenticated]
 
 class ProfessoresDatailsView(RetrieveUpdateDestroyAPIView):
     queryset = Professor.objects.all()
