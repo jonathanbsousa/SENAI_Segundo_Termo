@@ -6,12 +6,16 @@ export default function App(){
     <div className="container">
       <h1>Login</h1>
       <div className="caixa">
-
-      <label>Usuário</label>
-      <input type="text" placeholder="User" className="input_user"/>
-      
-      <label>Senha</label>
-      <input type="password" placeholder="Senha" className="input_user"/>
+        
+        <div className="usuario_input">
+          <label>Usuário</label>
+        <input type="text" placeholder="Usuário" />
+        </div>
+        
+        <div className="usuario_input">
+          <label>Senha</label>
+          <input type="text" placeholder="Senha"/>
+        </div>
 
       </div>
     </div>
