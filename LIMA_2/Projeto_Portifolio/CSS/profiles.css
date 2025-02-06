@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+}
+
+body{
+    background-color: rgb(26, 26, 26);
+}
+
+.flex_main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 950px;
+    border: 1px solid white;
+}
+
+.jonathan_profile{
+    width: 400px;
+    height: 600px;
+    border: 1px solid white;
+}
+
+.nicole_profile{
+    width: 400px;
+    height: 600px;
+    border: 1px solid white;
+}
+
+.profile_banner{
+    width: 100%;
+    height: auto;
+}
+
+.profile_banner img{
+    width: 100%;
+}
+
+.info_profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+}
+
+.profile_title{
+    margin-bottom: 15px;
+}
+
+.button_prolife{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+}
+
+.button_prolife button{
+    color: black;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+}
