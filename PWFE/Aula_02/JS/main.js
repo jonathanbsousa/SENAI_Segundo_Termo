@@ -53,3 +53,36 @@ switch(operacao){
         document.write(`O Resultado é ${divisao}`)
         break
 }
+
+function saudar(){
+    alert("Parabens")
+}
+
+function soma(a, b){
+    return a + b
+}
+
+function somaVarios(a, b, c, d){
+    return a + b + c + d
+}
+
+let resultado = soma(10,30)
+document.write(`O resultado da soma é de ${resultado} <br>`)
+
+let resposta = somaVarios(30,20,10,65)
+document.write(`O resultado da soma de varios é de ${resposta} <br>`)
+
+saudar();
+
+const dividir = (v1, v2) => v1/v2
+
+document.write(`O resultado da arrow function é de: ${dividir(100,2)}`)
+
+function converterMaiusculo(texto){
+    return texto.toUpperCase();
+}
+
+let frase = prompt("Digite uma frase")
+let fraseMaiuscula = converterMaiusculo(frase)
+document.write(fraseMaiuscula)
+

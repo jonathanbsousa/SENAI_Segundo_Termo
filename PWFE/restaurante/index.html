@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
+    <title>Restuarante</title>
+</head>
+<body>
+
+    <header>
+        <section class="flex_header">
+            <h1>Restuarante</h1>
+        </section>
+    </header>
+
+    <main>
+        <section class="conteiner">
+            <div class="cardapio">
+                <label>Escolha seu prato:</label>
+                <select id="prato">
+                    <option value = "0">Selecione</option>
+                    <option value="25">Strogonoff</option>
+                    <option value="100">Bobó de camarão</option>
+                    <option value="90">Sushi</option>
+                    <option value="27">Lasanha</option>
+                </select>
+            </div>
+            <div class="quantidade">
+                <label>quantidade</label>
+                <input type="number" id="quantidade" min="1" value="1">
+            </div>
+
+            <button onclick="CalcularTotal()">Calcular</button>
+            <p id="resultado"></p>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
