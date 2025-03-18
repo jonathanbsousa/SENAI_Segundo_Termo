@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaPlus, FaSearch } from 'react-icons/fa'
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import ModalProfessores from "../../components/modal";
+import ModalProfessores from "../../components/modalProfessor";
 import axios from "axios";
 import './styles.css'
 import { Edit } from "lucide-react";
