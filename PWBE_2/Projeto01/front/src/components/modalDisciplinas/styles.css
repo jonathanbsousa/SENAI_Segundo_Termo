@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(180, 193, 241);
-    background: rgba(24, 195, 81, 0.3);
+    background: rgba(41, 38, 90, 0.3);
 }
 
 .container-modal{
@@ -19,7 +19,7 @@
     justify-content: space-around;
     padding: 20px;
     border-radius: 5px;
-    background-color: rgb(209, 255, 196);
+    background-color: rgb(30, 15, 71);
 }
 
 .body-modal input{
@@ -27,7 +27,7 @@
 }
 
 .disciplina-modal{
-    width: 100px;
+    width: 300px;
     padding: 5px;
     margin-top: 10px;
     height: 30px;

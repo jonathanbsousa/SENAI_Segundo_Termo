@@ -5,7 +5,6 @@ import Footer from "../../components/footer";
 import ModalProfessores from "../../components/modalProfessor";
 import axios from "axios";
 import './styles.css'
-import { Edit } from "lucide-react";
 
 
 export default function Home() {

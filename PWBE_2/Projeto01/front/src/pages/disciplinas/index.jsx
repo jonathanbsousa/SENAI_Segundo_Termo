@@ -4,9 +4,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import ModalDisciplinas from "../../components/modalDisciplinas";
 import axios from "axios";
-import './styles.css'
-import { Edit } from "lucide-react";
-
+import "./styles.css"
 
 export default function Disciplina() {
     const [dados, setDados] = useState([])
@@ -88,7 +86,7 @@ export default function Disciplina() {
     return (
         <div >
             <Header />
-            <div className="container_home">
+            <div className="container_disciplinas">
                 <div className="lista">
                     <table>
                         <thead>
