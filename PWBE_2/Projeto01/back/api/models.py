@@ -29,3 +29,17 @@ class Curso(models.Model):
     tipo = models.CharField(max_length=3, choices=CURSOS)
     hora_aula = models.TimeField()
     sigla = models.CharField(max_length=255)
+
+class Ambiente(models.Model):
+    PERIODO = [
+        ('M', 'Manhã'),
+        ('T', 'Tarde'),
+        ('N', 'Noite'),
+        ('S', 'Sabado')
+    ]
+
+    coigo = models.CharField(max_length=255)
+    sala = models.CharField(max_length=255)
+    capacidade = models.IntegerField()
+    responsavel = models.CharField(max_length=255)
+    turno = models.CharField(max_length=1, choices=PERIODO)
