@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaPlus, FaSearch } from 'react-icons/fa'
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import ModalDisciplinas from "../../components/modalDisciplinas";
+import ModalDisciplinas from "../../components/modals/modalDisciplinas";
 import axios from "axios";
 import "./styles.css"
 

@@ -11,4 +11,21 @@ class Diciplinas(models.Model):
     disciplina = models.CharField(max_length=255)
     codigo = models.CharField(max_length=255)
     carga_horaria = models.CharField(max_length=255)
-    
+
+class Turma(models.Model):
+    codigo = models.CharField(max_length=255)
+    turma = models.CharField(max_length=255)
+
+class Curso(models.Model):
+    CURSOS = [
+        ('CAI', 'Curso de Aprendizagem Tecnica'),
+        ('CT', 'Curso Tecnico'),
+        ('FIC', 'Formação Inical e Continuada'),
+        ('CS', 'Curso Superior')
+    ]
+
+    codigo = models.CharField(max_length=255)
+    curso = models.CharField(max_length=255)
+    tipo = models.CharField(max_length=3, choices=CURSOS)
+    hora_aula = models.TimeField()
+    sigla = models.CharField(max_length=255)

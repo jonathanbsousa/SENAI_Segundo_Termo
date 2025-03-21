@@ -1,6 +1,6 @@
 .container_home {
-    background-color: rgb(246, 172, 68);
-    max-width: 1000px;
+    background-color: rgb(117, 112, 190);
+    width: 500px;
     height: 600px;
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,7 @@
 }
 .col4{
     /* background-color: rgb(209, 197, 37); */
-    width: 60px;
+    width: 200px;
 }
 .col5{
     /* background-color: aqua; */
@@ -50,22 +50,13 @@
     /* background-color: rgb(209, 197, 37); */
     width: 200px;
 }
-.col7{
-    /* background-color: aqua; */
-    width: 150px;
-}
-
-.col8{
-    /* background-color: rgb(209, 197, 37); */
-    width: 25px;
-}
 
 .footer_table{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(107, 104, 104);
+    background-color: rgb(82, 108, 129);
     width: 95%;
     height: 50px;
     border-radius: 10px;

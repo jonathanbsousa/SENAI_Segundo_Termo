@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import listar_professores, ProfessoresView, ProfessoresDetailView, DisciplinaDetailView, DisciplinaView
+from .views import listar_professores, ProfessoresView, ProfessoresDetailView, DisciplinaDetailView, DisciplinaView, TurmaView, TurmaDetailView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -14,6 +14,9 @@ urlpatterns = [
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path("disciplinas/", DisciplinaView.as_view()),
     path('disciplina/', DisciplinaDetailView.as_view()),
-    path('disciplina/<int:pk>', DisciplinaDetailView.as_view())
+    path('disciplina/<int:pk>', DisciplinaDetailView.as_view()),
+    path('turmas/', TurmaView.as_view()),
+    path('turma/', TurmaDetailView.as_view()),
+    path('turma/<int:pk>', TurmaDetailView.as_view())
 ]
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Professor, Diciplinas
-from .serializer import ProfessorSerializer, DisciplinasSerializer
+from .models import Professor, Diciplinas, Turma
+from .serializer import ProfessorSerializer, DisciplinasSerializer, TurmaSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
@@ -41,4 +41,14 @@ class DisciplinaView(ListCreateAPIView):
 class DisciplinaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Diciplinas.objects.all()
     serializer_class = DisciplinasSerializer
+    permission_classes = [IsAuthenticated]
+
+class TurmaView(ListCreateAPIView):
+    queryset = Turma.objects.all()
+    serializer_class = TurmaSerializer
+    permission_classes = [IsAuthenticated]
+
+class TurmaDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = Turma.objects.all()
+    serializer_class = TurmaSerializer
     permission_classes = [IsAuthenticated]
