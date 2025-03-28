@@ -14,7 +14,10 @@ export default function Home() {
                 <h1>Home</h1>
                 <button onClick={()=>navigate('/professor')}>Professor</button>
                 <button onClick={()=>navigate('/disciplinas')}>Disciplinas</button>
-
+                <button onClick={()=>navigate('/turmas')}>Turmas</button>
+                <button onClick={()=>navigate('/cursos')}>Cursos</button>
+                <button onClick={()=>navigate('/ambientes')}>Ambientes</button>
+                
             </div>
             <Footer />
         </div>

@@ -58,10 +58,8 @@ export default function Disciplina() {
             const response = await axios.post('http://127.0.0.1:8000/api/disciplinas/',
                 {
                     disciplina: novaDiscplina.disciplina,
-                    codigo: codigo.nome,
-                    carga_horaria: carga_horaria.email,
-                    tel: novaDiscplina.tel,
-                    ocupacao: novaDiscplina.ocupacao
+                    codigo: novaDiscplina.codigo,
+                    carga_horaria: novaDiscplina.carga_horaria,
                 },{
                     headers:{
                         Authorization: `Bearer ${token}`

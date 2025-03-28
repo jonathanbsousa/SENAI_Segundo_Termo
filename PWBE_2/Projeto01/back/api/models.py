@@ -26,7 +26,7 @@ class Curso(models.Model):
 
     codigo = models.CharField(max_length=255)
     curso = models.CharField(max_length=255)
-    tipo = models.CharField(max_length=3, choices=CURSOS)
+    tipo = models.CharField(max_length=3, choices=CURSOS, default="CT")
     hora_aula = models.TimeField()
     sigla = models.CharField(max_length=255)
 
@@ -38,8 +38,8 @@ class Ambiente(models.Model):
         ('S', 'Sabado')
     ]
 
-    coigo = models.CharField(max_length=255)
+    codigo = models.CharField(max_length=255)
     sala = models.CharField(max_length=255)
     capacidade = models.IntegerField()
     responsavel = models.CharField(max_length=255)
-    turno = models.CharField(max_length=1, choices=PERIODO)
+    turno = models.CharField(max_length=1, choices=PERIODO, default="M")
