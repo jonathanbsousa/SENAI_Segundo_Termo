@@ -3,11 +3,14 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-p_3j_og^v4a5m1=^dlm@+)i+3q06q34ij_#q1^dv#9gg71ke(1'
+SECRET_KEY = 'django-insecure-mp=v9ls)!iscoocxc@(q^i5xn(qs6pcj!z&giml!jw4)98)88y'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -17,24 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'api',
-    'rest_framework_simplejwt',
-    "corsheaders",
+    'corsheaders',
+    'api'
 ]
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
-
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "AUTH_HEADER_TYPES": ("Bearer",),
-}
-
-AUTH_USER_MODEL = 'auth.User'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -51,6 +39,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
+
 CORS_ALLOW_HEADERS = [
     "accept",
     "authorization",  
@@ -62,11 +51,21 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
-CORS_ALLOW_CREDENTIALS = True  
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
 
+AUTH_USER_MODEL = 'auth.User'
 
-ROOT_URLCONF = 'escola.urls'
+ROOT_URLCONF = 'ordens_servico.urls'
 
 TEMPLATES = [
     {
@@ -84,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'escola.wsgi.application'
+WSGI_APPLICATION = 'ordens_servico.wsgi.application'
 
 
 # Database
