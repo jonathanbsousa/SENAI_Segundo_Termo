@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
 from .models import Professor, Diciplinas, Turma, Curso, Ambiente
-from .serializer import ProfessorSerializer, DisciplinasSerializer, TurmaSerializer, CursoSerializer, AmbienteSerializer
+from .serializer import ProfessorSerializer, DisciplinasSerializer, TurmaSerializer, CursoSerializer, AmbienteSerializer, UserSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework import generics
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
@@ -72,3 +74,7 @@ class AmbienteDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Ambiente.objects.all()
     serializer_class = AmbienteSerializer
     permission_classes = [IsAuthenticated]
+
+class SignUpView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

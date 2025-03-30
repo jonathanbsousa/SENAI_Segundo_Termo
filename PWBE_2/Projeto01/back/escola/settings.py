@@ -34,8 +34,10 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
+AUTH_USER_MODEL = 'auth.User'
+
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -45,14 +47,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Permite requisições do front-end
+    "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
 CORS_ALLOW_HEADERS = [
     "accept",
-    "authorization",  # Permite o cabeçalho Authorization
+    "authorization",  
     "content-type",
     "dnt",
     "origin",
@@ -62,7 +63,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 
-CORS_ALLOW_CREDENTIALS = True  # Permitir envio de credenciais
+CORS_ALLOW_CREDENTIALS = True  
 
 
 ROOT_URLCONF = 'escola.urls'
