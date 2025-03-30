@@ -104,67 +104,168 @@ body {
     height: 900px;
     padding: 5px;
     justify-content: space-between;
-    border: 1px solid white;
 }
 
 .home_container .side_bar {
+    background-color: #212121;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 25%;
-    border: 1px solid white;
     border-radius: 15px;
 }
 
 .home_container .main_container {
+    background-color: #212121;
     width: 74.5%;
-    border: 1px solid white;
-    border-radius: 15px;
-}
-
-.nav_side {
-    width: 100%;
-    height: 20%;
-    border: 1px solid white;
     border-radius: 15px;
 }
 
 .nav_library {
-    width: 100%;
-    height: 79.5%;
-    border: 1px solid white;
+    height: 100%;
     border-radius: 15px;
 }
 
-.nav_home {
-    width: 100%;
-    height: 50%;
+.library_header {
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid springgreen;
+    width: 100%;
+    height: 5%;
+    padding: 15px 10px;
+    justify-content: space-between;
 }
 
-.home_icon {
+.library_logo {
     display: flex;
-    border: 1px solid white;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    gap: 5px;
+}
+
+.library_icon {
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 30px;
+    height: 30px;
+
     i {
-        font-size: 45px;
+        font-size: 25px;
     }
 }
 
-.home_text{
+.libray_text {
     display: flex;
-    width: 50px;
+    justify-content: flex-start;
+    width: 100px;
     height: 30px;
-    justify-content: center;
-    text-align: center;
-    border: 1px solid white;
 }
 
-.home_text p {
-    font-size: 50;
+.create_button {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 40px;
+    background-color: #535353;
+    border-radius: 50px;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.create_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #535353;
+    border-radius: 50%;
+}
+
+.create_icon i {
+    font-size: 20px;
+    color: white;
+}
+
+.create_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.create_text p {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.side_lessons {
+    padding: 5px;
+    width: 100%;
+    height: 90%;
+}
+
+.lessons_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    margin-top: 15px;
+}
+
+.lessons_container:hover {
+    background-color: #535353;
+    border-radius: 15px;
+}
+
+.lessons_img {
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+}
+
+.lessons_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lessons_info{
+    width: 75%;
+    height: 100%;
+}
+
+.lesson_title{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+}
+
+.lesson_title p {
+    text-align: start;
+    font-size: 25px;
+    margin: 0 auto 0 0;
+}
+
+.lesson_desc{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+}
+
+.lesson_desc p {
+    text-align: start;
+    font-size: 15px;
+    margin: 0 auto 0 0;
 }
