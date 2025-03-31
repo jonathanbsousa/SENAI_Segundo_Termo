@@ -56,6 +56,10 @@ body {
     }
 }
 
+.icon_home:hover{
+    background-color: #535353;
+}
+
 .header_container .search-container {
     display: flex;
     width: 55%;
@@ -101,7 +105,7 @@ body {
     display: flex;
     margin-top: 20px;
     width: 100%;
-    height: 900px;
+    height: 1200px;
     padding: 5px;
     justify-content: space-between;
 }
@@ -118,6 +122,11 @@ body {
 .home_container .main_container {
     background-color: #212121;
     width: 74.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     border-radius: 15px;
 }
 
@@ -215,7 +224,7 @@ body {
     align-items: center;
     width: 100%;
     height: 15%;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .lessons_container:hover {
@@ -268,4 +277,40 @@ body {
     text-align: start;
     font-size: 15px;
     margin: 0 auto 0 0;
+}
+
+.activity_container{
+    width: 250px;
+    height: 300px;
+    background-color: #535353;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.activity_container:hover {
+    background-color: #1DB954;
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.activity_img {
+    width: 100%;
+    height: 70%;
+    padding: 10px;
+}
+
+.activity_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.activate_desc {
+    width: 100%;
+    height: 30%;
+    padding: 5px;
+}
+
+.activate_desc p {
+    font-size: 30px;
 }
