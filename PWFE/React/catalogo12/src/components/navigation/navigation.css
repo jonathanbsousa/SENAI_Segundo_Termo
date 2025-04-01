@@ -1,0 +1,12 @@
+.container_navigation {
+    background-color: #535353;
+    padding: 10px;
+}
+
+.container_navigation ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+    color: white;
+}
