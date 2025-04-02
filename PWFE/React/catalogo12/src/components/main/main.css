@@ -1,0 +1,15 @@
+.container_main {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+    margin: 25px;
+    width: 85%;
+    height: 1000px;
+}
+
+.container_main p {
+    font-size: 100px;
+}
