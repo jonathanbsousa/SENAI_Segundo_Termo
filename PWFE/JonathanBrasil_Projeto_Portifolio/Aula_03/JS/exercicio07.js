@@ -8,7 +8,11 @@ const calcularCedulas = () => {
         valor %= cedula
     }
 
-    document.querySelector('.main_container').innerHTML = `<h1>A Quantidade de cedulas é: ${resultado}</h1>`
+    let resultadoFormatado = Object.entries(resultado)
+    .map(([cedula, quantidade]) => `${quantidade} nota(s) de R$${cedula}`)
+    .join('<br>');
+
+    document.querySelector('.main_container').innerHTML = `<h1>A Quantidade de cedulas é: <br>${resultadoFormatado}</h1>`
 }
 
 document.addEventListener("DOMContentLoaded", function () {

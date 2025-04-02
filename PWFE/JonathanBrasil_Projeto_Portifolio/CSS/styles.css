@@ -1,3 +1,7 @@
+/* 
+   Reset de estilos básicos para garantir consistência na aparência 
+   e evitar sublinhados em links, além de definir cor branca como padrão.
+*/
 * {
     color: white;
     margin: 0;
@@ -5,18 +9,28 @@
     text-decoration: none;
 }
 
-/* Paleta de Cores 
-#1DB954(Verde),
-#212121(preto mais claro),
-#121212(preto mais escuro),
-#535353(cinza),
-#B3B3B3(cinza claro)
- */
+/*
+   Definição da paleta de cores utilizada no projeto:
+   #1DB954 - Verde (destaques)
+   #212121 - Preto mais claro (fundos e seções secundárias)
+   #121212 - Preto mais escuro (fundo principal)
+   #535353 - Cinza médio (barras e botões)
+   #B3B3B3 - Cinza claro (textos secundários)
+*/
 
+/* 
+   Estilo do corpo da página, aplicando o fundo preto mais escuro 
+   para manter o visual escuro e semelhante ao Spotify.
+*/
 body {
-    background-color: #121212;
+    background-color: #000000;
 }
 
+/* 
+   HEADER (Cabeçalho)
+   Define o layout do cabeçalho, posicionando os elementos 
+   de navegação, pesquisa e perfil do usuário.
+*/
 .header_container {
     display: flex;
     width: 100%;
@@ -49,7 +63,7 @@ body {
     align-items: center;
     width: 5.5%;
     border-radius: 50%;
-    background-color: #212121;
+    background-color: #121212;
 
     i {
         font-size: 25px;
@@ -57,7 +71,7 @@ body {
 }
 
 .icon_home:hover{
-    background-color: #535353;
+    background-color: #212121;
 }
 
 .header_container .search-container {
@@ -67,7 +81,7 @@ body {
 
 .input-group-text {
     border: none;
-    background-color: #212121;
+    background-color: #121212;
     border-radius: 50%;
 
     i {
@@ -79,7 +93,7 @@ body {
     width: 79%;
     padding: 10px;
     border: none;
-    background-color: #212121;
+    background-color: #121212;
 }
 
 .header_user {
@@ -101,6 +115,10 @@ body {
     }
 }
 
+/* 
+   CONTAINER PRINCIPAL (Home)
+   Divisão da área principal entre a barra lateral e o conteúdo principal.
+*/
 .home_container {
     display: flex;
     margin-top: 20px;
@@ -110,8 +128,12 @@ body {
     justify-content: space-between;
 }
 
+/* 
+   Barra lateral, usada para exibir a biblioteca de aulas 
+   e outros conteúdos do usuário.
+*/
 .home_container .side_bar {
-    background-color: #212121;
+    background-color: #121212;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -119,8 +141,11 @@ body {
     border-radius: 15px;
 }
 
+/* 
+   Container principal da página (onde as atividades são exibidas)
+*/
 .home_container .main_container {
-    background-color: #212121;
+    background-color: #121212;
     width: 74.5%;
     display: flex;
     flex-direction: row;
@@ -178,7 +203,7 @@ body {
     align-items: center;
     width: 20%;
     height: 40px;
-    background-color: #535353;
+    background-color: #212121;
     border-radius: 50px;
     padding: 5px;
     justify-content: space-between;
@@ -190,7 +215,7 @@ body {
     align-items: center;
     width: 30px;
     height: 30px;
-    background-color: #535353;
+    background-color: #212121;
     border-radius: 50%;
 }
 
@@ -228,7 +253,7 @@ body {
 }
 
 .lessons_container:hover {
-    background-color: #535353;
+    background-color: #212121;
     border-radius: 15px;
 }
 
@@ -282,7 +307,7 @@ body {
 .activity_container{
     width: 250px;
     height: 300px;
-    background-color: #535353;
+    background-color: #212121;
     border-radius: 15px;
     margin: 10px;
 }
@@ -313,4 +338,131 @@ body {
 
 .activate_desc p {
     font-size: 30px;
+}
+
+form {
+    background-color: #212121;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+    width: 400px;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #B3B3B3;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form_container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #535353;
+    color: white;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.sexo_container label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.button_container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #1DB954;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1aa34a;
+}
+
+.user_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.user_banner {
+    background-image: url('../IMG/7de8aca518a4ece688c23791c4eb1ba7.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: contain;
+    width: 100%;
+    height: 40%;
+}
+
+.user_header {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #212121;
+    border-radius: 15px;
+}
+
+.user_img {
+    height: 100%;
+    margin: 0 100px;
+}
+
+.user_img img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.user_text {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.user_name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.user_name h4 {
+    font-size: 25px;
+}
+
+.user_desc{
+    width: 100%;
+    height: 50%;
+}
+
+.user_desc p {
+    font-size: 15px;
 }
