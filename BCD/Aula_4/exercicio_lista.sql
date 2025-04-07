@@ -4,56 +4,57 @@ USE sistema_treinamentos;
 
 -- INSTRUTORES
 CREATE TABLE instrutor (
- id INT PRIMARY KEY AUTO_INCREMENT,
- nome VARCHAR(100),
- especialidade VARCHAR(100)
-);
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100),
+especialidade VARCHAR(100)
+) AUTO_INCREMENT=101;
 
 -- MATÉRIAS
 CREATE TABLE materia (
- id INT PRIMARY KEY AUTO_INCREMENT,
- nome VARCHAR(100)
-);
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100)
+) AUTO_INCREMENT=201;
 
 -- TURMAS
 CREATE TABLE turma (
- id INT PRIMARY KEY AUTO_INCREMENT,
- nome VARCHAR(100),
- data_inicio DATE,
- data_fim DATE
-);
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100),
+data_inicio DATE,
+data_fim DATE
+) AUTO_INCREMENT=301;
 
--- ALUNOS (cada aluno pertence a uma turma)
+-- ALUNOS
 CREATE TABLE aluno (
- id INT PRIMARY KEY AUTO_INCREMENT,
- nome VARCHAR(100),
- email VARCHAR(100),
- turma_id INT, 
- FOREIGN KEY (turma_id) REFERENCES turma(id)
-);
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100),
+email VARCHAR(100),
+turma_id INT,
+FOREIGN KEY (turma_id) REFERENCES turma(id)
+) AUTO_INCREMENT=401;
 
--- INSTRUTOR x MATÉRIA (N:N)
+-- INSTRUTOR x MATÉRIA
 CREATE TABLE instrutor_materia (
- instrutor_id INT,
- materia_id INT,
- PRIMARY KEY (instrutor_id, materia_id),
- FOREIGN KEY (instrutor_id) REFERENCES instrutor(id),
- FOREIGN KEY (materia_id) REFERENCES materia(id)
+instrutor_id INT,
+materia_id INT,
+PRIMARY KEY (instrutor_id, materia_id),
+FOREIGN KEY (instrutor_id) REFERENCES instrutor(id),
+FOREIGN KEY (materia_id) REFERENCES materia(id)
+
 );
 
--- ATIVIDADES: TURMA + MATÉRIA + INSTRUTOR
+-- ATIVIDADES
 CREATE TABLE atividade (
- id INT PRIMARY KEY AUTO_INCREMENT,
- descricao VARCHAR(255),
- turma_id INT,
- materia_id INT,
- instrutor_id INT,
- FOREIGN KEY (turma_id) REFERENCES turma(id),
- FOREIGN KEY (materia_id) REFERENCES materia(id),
- FOREIGN KEY (instrutor_id) REFERENCES instrutor(id)
+id INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(255),
+turma_id INT,
+materia_id INT,
+instrutor_id INT,
+FOREIGN KEY (turma_id) REFERENCES turma(id),
+FOREIGN KEY (materia_id) REFERENCES materia(id),
+FOREIGN KEY (instrutor_id) REFERENCES instrutor(id)
 );
 
--- INSTRUTORES
+-- INSERÇÕES
 INSERT INTO instrutor (nome, especialidade) VALUES
 ('Ana Souza', 'Excel'),
 ('Carlos Lima', 'Segurança'),
@@ -62,7 +63,6 @@ INSERT INTO instrutor (nome, especialidade) VALUES
 ('Juliana Martins', 'Empreendedorismo'),
 ('Bruno Teixeira', 'Inovação');
 
--- MATÉRIAS
 INSERT INTO materia (nome) VALUES
 ('Excel Avançado'),
 ('Segurança no Ambiente Industrial'),
@@ -71,7 +71,6 @@ INSERT INTO materia (nome) VALUES
 ('Empreendedorismo Digital'),
 ('Gestão da Inovação');
 
--- TURMAS
 INSERT INTO turma (nome, data_inicio, data_fim) VALUES
 ('Turma A', '2025-03-01', '2025-03-15'),
 ('Turma B', '2025-04-01', '2025-04-10'),
@@ -80,32 +79,34 @@ INSERT INTO turma (nome, data_inicio, data_fim) VALUES
 ('Turma E', '2025-07-01', '2025-07-15'),
 ('Turma F', '2025-08-01', '2025-08-12');
 
--- ALUNOS
+-- Pegando os IDs reais gerados
+-- Aqui é necessário fazer SELECTs para pegar os valores certos de cada ID
+-- Mas pra facilitar, vamos continuar na mesma ordem da inserção (sabendo que começa em 101, 201, etc)
 INSERT INTO aluno (nome, email, turma_id) VALUES
-('Lucas Pereira', 'lucas.p@email.com', 1),
-('Mariana Silva', 'mariana.s@email.com', 1),
-('João Almeida', 'joao.a@email.com', 2),
-('Beatriz Costa', 'beatriz.c@email.com', 3),
-('Fernanda Rocha', 'fernanda.r@email.com', 3),
-('Gabriel Nunes', 'gabriel.n@email.com', 4);
+('Lucas Pereira', 'lucas.p@email.com', 301),
+('Mariana Silva', 'mariana.s@email.com', 301),
+('João Almeida', 'joao.a@email.com', 302),
+('Beatriz Costa', 'beatriz.c@email.com', 303),
+('Fernanda Rocha', 'fernanda.r@email.com', 303),
+('Gabriel Nunes', 'gabriel.n@email.com', 304);
 
 -- INSTRUTOR x MATÉRIA
 INSERT INTO instrutor_materia (instrutor_id, materia_id) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6);
+(101, 201),
+(102, 202),
+(103, 203),
+(104, 204),
+(105, 205),
+(106, 206);
 
 -- ATIVIDADES
 INSERT INTO atividade (descricao, turma_id, materia_id, instrutor_id) VALUES
-('Oficina de Excel com dashboards', 1, 1, 1),
-('Palestra sobre segurança no trabalho', 2, 2, 2),
-('Workshop de liderança prática', 3, 3, 3),
-('Atividade de simulação de atendimento', 4, 4, 4),
-('Laboratório de inovação em startups', 5, 6, 6),
-('Criação de plano de negócio digital', 6, 5, 5);
+('Oficina de Excel com dashboards', 301, 201, 101),
+('Palestra sobre segurança no trabalho', 302, 202, 102),
+('Workshop de liderança prática', 303, 203, 103),
+('Atividade de simulação de atendimento', 304, 204, 104),
+('Laboratório de inovação em startups', 305, 206, 106),
+('Criação de plano de negócio digital', 306, 205, 105);
 
 SELECT aluno.nome, turma.nome FROM aluno
 INNER JOIN turma ON aluno.turma_id = turma.id;
@@ -128,6 +129,6 @@ INNER JOIN materia ON atividade.materia_id = materia.id;
 
 SELECT aluno.nome, turma.nome, atividade.descricao, materia.nome, instrutor.nome FROM aluno
 INNER JOIN turma ON aluno.turma_id = turma.id
-INNER JOIN atividade ON atividade.turma_id = atividade.id
+INNER JOIN atividade ON atividade.turma_id = turma.id 
 INNER JOIN materia ON atividade.materia_id = materia.id
-INNER JOIN instrutor ON atividade.instrutor_id = instrutor.id;
+INNER JOIN instrutor ON  atividade.instrutor_id = instrutor.id;
