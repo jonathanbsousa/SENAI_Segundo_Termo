@@ -1,6 +1,6 @@
-import './navigation.css'
+import { estilo } from './navigation.module.css'
 
-export default function Navigation() {
+export function Navigation() {
     return (
         <nav className="container_navigation">
             <ul>

@@ -1,9 +1,9 @@
 // structure react for components
-import './styles.css'
+import { estilo } from './header.module.css'
 
-export default function Header() {
+export function Header() {
     return (
-        <header className='container_header'>
+        <header className={estilo.container}>
             <div className="header_logo">
 
             </div>
