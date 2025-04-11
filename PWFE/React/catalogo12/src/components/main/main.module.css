@@ -1,4 +1,4 @@
-.container_main {
+.container {
     display: flex;
     align-self: center;
     justify-self: center;
@@ -10,6 +10,6 @@
     height: 1000px;
 }
 
-.container_main p {
+.container p {
     font-size: 100px;
 }

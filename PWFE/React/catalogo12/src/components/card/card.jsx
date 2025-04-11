@@ -1,4 +1,4 @@
-import { estilo } from './card.module.css'
+import estilo from './card.module.css'
 
 export function Card({ movie }) {
     return (

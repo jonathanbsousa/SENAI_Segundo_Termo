@@ -1,9 +1,9 @@
-.container_navigation {
+.container {
     background-color: #535353;
     padding: 10px;
 }
 
-.container_navigation ul {
+.container ul {
     display: flex;
     justify-content: center;
     gap: 10px;
