@@ -1,12 +1,15 @@
 .container {
-    background-color: #535353;
     padding: 10px;
+    border: 1px solid white;
 }
 
 .container ul {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-around;
     list-style-type: none;
     color: white;
+}
+
+.container ul li {
+    font-size: 20px;
 }

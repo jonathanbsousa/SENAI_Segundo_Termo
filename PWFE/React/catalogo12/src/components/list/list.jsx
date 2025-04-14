@@ -12,24 +12,21 @@ export function List() {
 
     useEffect(() => {
         axios.get(`${API_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR`)
-            .then(response => {
-                console.log(response.data.results)
-                setMovies(response.data.results)
-
-            })
-            .catch(error => {
-                console.log("Erro: ", error)
-            })
+        .then(response => {
+            console.log(response.data.results)
+            setMovies(response.data.results)
+        })
+        .catch(error => {
+            console.log("Erro: ", error)
+        })
     }, [])
 
     return (
-        <div>
+        <div className={estilo.container}>
             <figure>
-                {movies.map(movie=>{
-                    <Card key={movie.id}
-                        movie={movie}
-                    />
-                })}
+                {movies.map(movie => (
+                    <Card key={movie.id} movie={movie} />
+                ))}
             </figure>
         </div>
     )

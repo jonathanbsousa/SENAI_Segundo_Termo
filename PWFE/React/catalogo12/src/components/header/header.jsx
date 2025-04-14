@@ -1,11 +1,12 @@
 // structure react for components
 import estilo from './header.module.css'
+import logo from '../../../logo.png'
 
 export function Header() {
     return (
         <header className={estilo.container}>
             <div className={estilo.header_logo}>
-
+                <img src={logo} alt="" />
             </div>
             <div className={estilo.header_search}>
 

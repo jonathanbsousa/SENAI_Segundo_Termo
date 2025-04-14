@@ -4,7 +4,6 @@ import { Main } from "./components/main/main"
 import { Footer } from "./components/footer/footer"
 
 function App() {
-
   return (
     <>
       <Header />
@@ -13,7 +12,6 @@ function App() {
       <Footer />
     </>
   )
-
 }
 
 export default App

@@ -2,9 +2,24 @@
     position: relative;
     width: 280px;
     margin: 10px;
+    padding: 10px;
     overflow: hidden;
-    border-radius: 10px;
-    transition: transition 0.03 ease;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
     margin-left: 30px;
-    background-color: darkred;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+}
+
+.container h3 {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
 }

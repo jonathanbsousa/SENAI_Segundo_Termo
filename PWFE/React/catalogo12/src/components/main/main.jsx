@@ -4,8 +4,12 @@ import { List } from '../list/list';
 export function Main() {
     return (
         <main className={estilo.container}>
-            <p>Main</p>
-            <List />
+            <div className={estilo.banner}>
+
+            </div>
+            <div className={estilo.list}>
+                <List />
+            </div>
         </main>
     )
 }
