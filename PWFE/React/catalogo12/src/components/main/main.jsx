@@ -1,11 +1,11 @@
-import { estilo } from './main.module.css'
-import List from '../list/List'
+import estilo from './main.module.css';
+import { List } from '../list/list';
 
-export  function Main() {
+export function Main() {
     return (
-        <main className='container_main'>
+        <main className={estilo.container}>
             <p>Main</p>
-            <Lista />
+            <List />
         </main>
     )
 }

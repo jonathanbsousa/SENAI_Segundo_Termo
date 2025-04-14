@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react';
-import Card from "../card/card";
-import { estilo } from './list.module.css'
+import { Card } from "../card/card";
+import estilo from './list.module.css'
 
 const API_URL = 'https://api.themoviedb.org/3'
 const API_KEY = 'af26cce282aecf5c6cc39a264f29d0a7'

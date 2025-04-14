@@ -1,8 +1,8 @@
-import { estilo } from './navigation.module.css'
+import estilo from './navigation.module.css'
 
 export function Navigation() {
     return (
-        <nav className="container_navigation">
+        <nav className={estilo.container}>
             <ul>
                 <li>Home</li>
                 <li>Filmes</li>
