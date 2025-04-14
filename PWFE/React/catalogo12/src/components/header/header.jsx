@@ -1,6 +1,6 @@
 // structure react for components
 import estilo from './header.module.css'
-import logo from '../../../logo.png'
+import logo from '../../../logo-removebg-preview.png'
 
 export function Header() {
     return (

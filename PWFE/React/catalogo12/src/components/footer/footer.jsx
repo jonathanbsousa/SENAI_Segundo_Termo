@@ -1,7 +1,6 @@
 import estilo from './footer.module.css'
 
 export function Footer() {
-    // 😥🔫
     return (
         <footer className={estilo.container}>
             <div className={estilo.mine_bar}>
