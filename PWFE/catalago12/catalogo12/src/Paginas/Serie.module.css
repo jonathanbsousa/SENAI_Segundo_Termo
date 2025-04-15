@@ -1,0 +1,8 @@
+.conteiner{
+    background-color: #141414;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height: 90vh;
+}

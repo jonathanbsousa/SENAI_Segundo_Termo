@@ -1,0 +1,11 @@
+.conteiner{
+    position: relative;
+    width: 280px;
+    margin: 10px;
+    overflow:hidden;
+    border-radius: 10px;
+    transition: transform 0.03 ease;
+    margin-left: 30px;
+    background-color: red;
+
+}

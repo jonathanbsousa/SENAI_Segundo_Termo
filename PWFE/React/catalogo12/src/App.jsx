@@ -1,15 +1,13 @@
-import { Header } from "./components/header/header"
-import { Navigation } from "./components/navigation/navigation"
-import { Main } from "./components/main/main"
-import { Footer } from "./components/footer/footer"
+import React from "react"
+import { BrowserRouter } from "react-router-dom"
+import { Rotas } from "./Routes/Routes"
 
 function App() {
   return (
     <>
-      <Header />
-      <Navigation />
-      <Main />
-      <Footer />
+      <BrowserRouter>
+        <Rotas />
+      </BrowserRouter>
     </>
   )
 }
