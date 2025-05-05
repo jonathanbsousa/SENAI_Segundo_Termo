@@ -5,6 +5,9 @@ export function Profile() {
         <>
             <div className={estilo.container}>
                 <div className={estilo.panel}>
+<<<<<<< HEAD
+                    
+=======
                     <div className={estilo.profile}>
                         <div className={estilo.img_profile}>
                             <img src="../../../eu.jpg" alt="" />
@@ -18,6 +21,7 @@ export function Profile() {
                             </div>
                         </div>
                     </div>
+>>>>>>> 1d95b4026a2b08004cdb154ae505733852615911
                 </div>
             </div>
         </>

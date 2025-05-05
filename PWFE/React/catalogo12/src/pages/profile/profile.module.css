@@ -6,6 +6,12 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
+.panel {
+    width: 100%;
+    height: 800px;
+    background-image: url("../../../public/");
+=======
 .panel{
     display: flex;
     flex-direction: column;
@@ -54,4 +60,5 @@
 
 .username {
     
+>>>>>>> 1d95b4026a2b08004cdb154ae505733852615911
 }
