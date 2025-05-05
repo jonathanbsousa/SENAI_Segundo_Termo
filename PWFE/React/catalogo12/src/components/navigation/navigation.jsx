@@ -6,7 +6,7 @@ export function Navigation() {
         <nav className={estilo.container}>
             <ul>
                 <Link to="/"><li>Home</li></Link>
-                <Link to="series"><li>Filmes</li></Link>
+                <Link to="series"><li>Series</li></Link>
                 <Link to="profile"><li>Perfil</li></Link>
             </ul>
         </nav>

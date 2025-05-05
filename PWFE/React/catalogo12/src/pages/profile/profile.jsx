@@ -4,7 +4,9 @@ export function Profile() {
     return (
         <>
             <div className={estilo.container}>
-
+                <div className={estilo.panel}>
+                    
+                </div>
             </div>
         </>
     )
