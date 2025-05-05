@@ -6,8 +6,59 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
 .panel {
     width: 100%;
     height: 800px;
     background-image: url("../../../public/");
+=======
+.panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 1000px;
+    margin: 50px 0px;
+    background-image: url("../../../Papel\ de\ parede\ adesivo\ lavavel\ ceu\ noturno\ estrelado\ 1\ 5x2m.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+.panel img{
+    width: 100%;
+    height: 500px;
+}
+
+.profile {
+    display: flex;
+    width: 100%;
+    height: 650px;
+    background-color: var(--tertiary-color);
+}
+
+.img_profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 15px;
+}
+
+.img_profile img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user_profile {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+.username {
+    
+>>>>>>> 1d95b4026a2b08004cdb154ae505733852615911
 }
