@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from .models import *
 
 class Sensores_Serializer(serializers.ModelSerializer):
+    status = serializers.ChoiceField(choices=[('ativo', 'Ativo'), ('inativo', 'Inativo')])
+
     class Meta:
         model = Sensores
         fields = '__all__'
