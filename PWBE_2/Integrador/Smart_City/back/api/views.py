@@ -31,11 +31,15 @@ class Ambientes_List_Create(ListCreateAPIView):
     queryset = Ambientes.objects.all()
     serializer_class = Ambientes_Serializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = AmbientesFilter
 
 class Ambientes_Retrieve_Update_Destroy(RetrieveUpdateDestroyAPIView):
     queryset = Ambientes.objects.all()
     serializer_class = Ambientes_Serializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = AmbientesFilter
 
 class Historico_List_Create(ListCreateAPIView):
     queryset = Historico.objects.all()
@@ -114,26 +118,26 @@ class UploadHistoricoXLSXView(APIView):
         ws = wb.active
 
         for i, row in enumerate(ws.iter_rows(min_row=2, values_only=True)):  # pula o cabeçalho
-            sensor_nome = str(row[0]).strip() if row[0] else None
-            ambiente_nome = str(row[1]).strip() if row[1] else None
+            sensor = str(row[0]).strip() if row[0] else None
+            ambiente = str(row[1]).strip() if row[1] else None
             valor = row[2]
             timestamp_raw = row[3]
 
             # Validação mínima
-            if not sensor_nome or not ambiente_nome or valor is None or timestamp_raw is None:
+            if not sensor or not ambiente or valor is None or timestamp_raw is None:
                 print(f"[Linha {i+2}] Dados incompletos. Ignorando. Linha: {row}")
                 continue
 
             try:
-                sensor = Sensores.objects.get(sensor__iexact=sensor_nome)
+                sensor = Sensores.objects.get(id=int(sensor))
             except Sensores.DoesNotExist:
-                print(f"[Linha {i+2}] Sensor '{sensor_nome}' não encontrado.")
+                print(f"[Linha {i+2}] Sensor '{sensor}' não encontrado.")
                 continue
 
             try:
-                ambiente = Ambientes.objects.get(descricao__iexact=ambiente_nome)
+                ambiente = Ambientes.objects.get(id=int(ambiente))
             except Ambientes.DoesNotExist:
-                print(f"[Linha {i+2}] Ambiente '{ambiente_nome}' não encontrado.")
+                print(f"[Linha {i+2}] Ambiente '{ambiente}' não encontrado.")
                 continue
 
             try:

@@ -15,10 +15,10 @@ class Ambientes_Serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class Historico_Serializer(serializers.ModelSerializer):
-    sensor = Sensores_Serializer(read_only=True, source='sensor')
+    sensor = Sensores_Serializer(read_only=True)
     sensor_id = serializers.PrimaryKeyRelatedField(queryset=Sensores.objects.all(), write_only=True)
 
-    ambiente = Ambientes_Serializer(read_only=True, source='ambiente')
+    ambiente = Ambientes_Serializer(read_only=True)
     ambiente_id = serializers.PrimaryKeyRelatedField(queryset = Ambientes.objects.all(), write_only=True)
 
     class Meta:
