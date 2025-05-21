@@ -7,8 +7,7 @@ from django.db.models.functions import ExtractHour
 class HistoricoFilter(django_filters.FilterSet):
     id = django_filters.NumberFilter(field_name='id')
     sensor_nome = django_filters.CharFilter(field_name='sensor__sensor', lookup_expr='iexact') 
-    ambiente_nome = django_filters.CharFilter(field_name='ambiente__descricao', lookup_expr='icontains')  
-    
+    ambiente_nome = django_filters.CharFilter(field_name='ambiente__descricao', lookup_expr='icontains')
     timestamp__date = django_filters.DateFilter(method='filter_by_date')
     timestamp__hour = django_filters.NumberFilter(method='filter_by_hour')
 

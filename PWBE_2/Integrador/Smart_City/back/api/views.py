@@ -9,9 +9,10 @@ from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import filters
-from openpyxl import load_workbook
+from openpyxl import load_workbook, Workbook
 from datetime import datetime
 from django_filters.rest_framework import DjangoFilterBackend
+from django.http import HttpResponse
 
 class Sensores_List_Create(ListCreateAPIView):
     queryset = Sensores.objects.all()
@@ -194,3 +195,85 @@ class UploadAmbientesXLSXView(APIView):
             )
 
         return Response({'mensagem': 'Ambientes importados com sucesso!'})
+
+class ExportXLSXHistorico(APIView):
+    def get(self, request):
+        # Aplica os filtros com base na URL
+        filtro = HistoricoFilter(request.GET, queryset=Historico.objects.all())
+        historico_filtrado = filtro.qs
+
+        # Cria nova planilha
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Histórico"
+
+        # Cabeçalho
+        ws.append(['Sensor', 'Ambiente', 'Valor', 'Timestamp'])
+
+        # Dados filtrados
+        for item in historico_filtrado:
+            ws.append([
+                item.sensor.sensor,
+                item.ambiente.descricao,
+                item.valor,
+                item.timestamp.strftime("%Y-%m-%d %H:%M:%S")
+            ])
+
+        # Gera o XLSX como resposta HTTP
+        response = HttpResponse(
+            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
+        response['Content-Disposition'] = 'attachment; filename=historico_filtrado.xlsx'
+        wb.save(response)
+
+        return response
+    
+class ExportXLSXSensores(APIView):
+    def get(self, request):
+        sensores = Sensores.objects.all()
+        wb = load_workbook('sensores.xlsx')
+        ws = wb.active
+
+        # Cabeçalho
+        ws.append(['Sensor', 'Mac Address', 'Unidade Med', 'Latitude', 'Longitude', 'Status'])
+
+        # Dados
+        for item in sensores:
+            ws.append([
+                item.sensor,
+                item.mac_address,
+                item.unidade_med,
+                item.latitude,
+                item.longitude,
+                item.status
+            ])
+
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=sensores.xlsx'
+        wb.save(response)
+
+        return response
+    
+class ExportXLSXAmbientes(APIView):
+    def get(self, request):
+        ambientes = Ambientes.objects.all()
+        wb = load_workbook('ambientes.xlsx')
+        ws = wb.active
+
+        # Cabeçalho
+        ws.append(['Sig', 'Descrição', 'NI', 'Responsável'])
+
+        # Dados
+        for item in ambientes:
+            ws.append([
+                item.sig,
+                item.descricao,
+                item.ni,
+                item.responsavel
+            ])
+
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=ambientes.xlsx'
+        wb.save(response)
+
+        return response
